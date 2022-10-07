@@ -1,0 +1,81 @@
+p1: compute de min of 3 numbers
+ 
+// semicolons on line endings
+// everything between curly braces, even one line codes
+ 
+integer a, b, c;
+a = input_integer();
+b = input_integer();
+c = input_integer(); // specifying the type when inputting
+integer minimum_number; // the syntax for an integer type is integer
+minimum_number = a;
+ 
+if (b < a) {
+            minimum_number = b;
+}
+if (c < minimum_ number) {
+            minimum_number = c;
+}
+ 
+print(“The minimum number is: ”, minimum_number);
+// print string and then a number -> they have to be separated by a comma
+ 
+ 
+p2: verify if a number is prime
+ 
+integer a;
+a = input_integer();
+integer i = 2;
+boolean prime = true;
+ 
+while (i < a/2 A prime == true) { // logical and is A (or would be O and not would be N)
+            if (a mod i == 0) {
+                        prime = false;
+            }
+            i = i + 1;
+}
+ 
+if(prime == true) {
+            print(“The number is prime”);
+}
+elif (prime == false) {
+            print(“The number is not prime”);
+}
+ 
+ 
+ 
+ 
+p3: compute the sum of n numbers
+ 
+integer sum = 0;
+integer n; // cannot declare and read at once, but can declare and initialize
+integer i = 0;
+n = input_integer();
+ 
+while (i < n) {
+            integer number;
+number = input_integer();
+            sum = sum + number;
+}
+ 
+print(sum);
+ 
+p1err:
+ 
+integer a, b, c;
+a = input_integer();
+b = input_integer();
+c = input_integer();
+int minimum_number; // it won’t work because the type is integer, not int
+minimum_number = a;
+ 
+if (b < a) {
+            minimum_number = b;
+}
+if (c < minimum_ number) {
+            minimum_number = c;
+}
+ 
+print(“The minimum number is: ” + minimum_number); // it won’t work because of the “+” sign, it has to be “,”
+ 
+ 
