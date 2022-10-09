@@ -1,0 +1,25 @@
+program = {statement}
+
+statement = (var_statement|assign_statement|if_statement|while_statement) ";"
+
+var_statement = "integer"|"string"|"boolean" identifier_list
+
+identifier_list = identifier ["=" expression] {"," identifier ["=" expression]}
+
+expression = int_expression | string_expression | boolean_expression
+
+int_expression = integer | identifier | int_expression ("+"|"-"|"*"|"/") int_expression | "(" int_expression ("+"|"-"|"*"|"/") int_expression ")"
+
+string_expression = string | identifier | string_expression , string_expression
+
+boolean_expression = boolean | identifier | boolean_expression {"A"/"O"} | "N" boolean_expression
+
+expression_list = expression{"," expression}
+
+assign_statement = identifier "=" expression
+
+if_statement = "if" "(" condition ")" "{" statement{statement} "}" {"elif" "(" condition ")" "{" statement{statement} "}"} ["else" "{" statement{statement} "}"]
+
+condition = expression ("=="|"<"|"<="|">"|">=") expression
+
+while_statement = "while" "(" condition ")" "{" statement {statement} "}"
