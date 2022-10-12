@@ -1,25 +1,33 @@
-program = {statement}
+program ::= compound_statement
 
-statement = (var_statement|assign_statement|if_statement|while_statement) ";"
+declaration ::= type " " identifier
 
-var_statement = "integer"|"string"|"boolean" identifier_list
+type ::= "integer" | "string" | "boolean"
 
-identifier_list = identifier ["=" expression] {"," identifier ["=" expression]}
+compound_statement ::= statement_list
 
-expression = int_expression | string_expression | boolean_expression
+statement_list ::= stmt | stmt ";" statement_list
 
-int_expression = integer | identifier | int_expression ("+"|"-"|"*"|"/") int_expression | "(" int_expression ("+"|"-"|"*"|"/") int_expression ")"
+statement ::= "{" simplstmt ";" "}" | structstmt
 
-string_expression = string | identifier | string_expression , string_expression
+simplstmt ::= assignstmt | iostmt | declaration
 
-boolean_expression = boolean | identifier | boolean_expression {"A"/"O"} | "N" boolean_expression
+structstmt ::= cmpdstmt | ifstmt | whilestmt
 
-expression_list = expression{"," expression}
+ifstmt ::= "if" condition statement ["elif" condition statement]["else" statement]
 
-assign_statement = identifier "=" expression
+whilestmt ::= "while" condition stmt
 
-if_statement = "if" "(" condition ")" "{" statement{statement} "}" {"elif" "(" condition ")" "{" statement{statement} "}"} ["else" "{" statement{statement} "}"]
+assignstmt ::= identifier "=" expression
 
-condition = expression ("=="|"<"|"<="|">"|">=") expression
+expression ::= expression "+" term | expression “-“ term | term
 
-while_statement = "while" "(" condition ")" "{" statement {statement} "}"
+term ::= term "*" factor | term “/” factor | factor
+
+factor ::= "(" expression ")" | identifier | constant
+
+iostmt ::= "input_integer" "(" identifier ")"| "input_string" "(" identifier ")" | "print" "(" identifier ")" | "print" "(" constant ")"
+
+condition ::= "(" expression RELATION expression ")"
+
+RELATION ::= "<" | "<=" | "=" | "!>" | ">=" | ">" | "A" | "O" | "N"
