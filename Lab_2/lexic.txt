@@ -6,9 +6,9 @@ c. Decimal digits (0-9);
 Lexic:
 a.Special symbols, representing:
 - operators + - * / = < <= = >= != > A O N
-- separators [ ] { } ( ) ; space
+- separators [ ] { } ( ) ; space : _ . , "
 - reserved words:
-  integer for while if elif else string input_integer input_string print
+  integer while if elif else string input_integer input_string print
 
 b.identifiers
 -a sequence of letters and  digits, such that the first character is a letter; the rule is:
