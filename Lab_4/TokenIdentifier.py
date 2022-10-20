@@ -1,91 +1,81 @@
 from re import match
 
 
-class Scanner:
+class TokenIdentifier:
     def __init__(self, lexicInserter):
         self.__lexicInserter = lexicInserter
 
-    def is_identifier(self, token) -> bool:
-        '''
-        Check if the given token is an identifier
-        :param token: the given token
-        :return: true if it is an identifier, otherwise false
-        '''
-        return match(r'^[a-z]([a-zA-Z]|[0-9])*$', token) is not None
+    def get_reserved_words(self):
+        return self.__lexicInserter.reservedWords
 
-    def is_constant(self, token) -> bool:
-        '''
-        Check if the given token is a constant
-        :param token: the given token
-        :return: true if it is a constant, otherwise false
-                '''
+    def get_operators(self):
+        return self.__lexicInserter.operators
+
+    def get_separators(self):
+        return self.__lexicInserter.separators
+
+    @staticmethod
+    def is_identifier(token) -> bool:
+        return match(r'^[a-z](_|[a-zA-Z]|[0-9])*$', token) is not None
+
+    @staticmethod
+    def is_numerical_constant(token) -> bool:
         return match(r'^(0|[+-]?[1-9][0-9]*)$|^\'.\'$|^\'.*\'$', token) is not None
 
-    def get_string_token_from_line(self, line, index):
-        '''
-        Gets a string (text between quotes) from a line input
-        '''
-        token = ''
-        quotes = 0
-        while index < len(line) and quotes < 2:
-            if line[index] == '\'':
-                quotes += 1
-            token += line[index]
-            index += 1
-        return token, index
+    @staticmethod
+    def is_string_constant(token) -> bool:
+        return match(r'"(.*?)"', token) is not None
 
-    def is_part_of_operator(self, char) -> bool:
-        '''
-        Checks if a character is part of an operator
-        '''
-        for op in self.__lexicInserter.operators:
-            if char in op:
-                return True
-        return False
-
-    def get_operator_token(self, line, index):
-        '''
-        Gets an operator from the given line
-        '''
-        token = ''
-        while index < len(line) and self.is_part_of_operator(line[index]):
-            token += line[index]
-            index += 1
-        return token, index
-
-    def get_tokens(self, line):
-        token = ''
-        index = 0
-        tokens = []
-        while index < len(line):
-            if self.is_part_of_operator(line[index]):
-                if token:
-                    tokens.append(token)
-                token, index = self.get_operator_token(line, index)
-                tokens.append(token)
-                token = ''  # reset token
-
-            elif line[index] == '\"':
-                if token:
-                    tokens.append(token)
-                token, index = self.get_string_token_from_line(line, index)
-                # print(token)  # is prime')
-                tokens.append(token)
-                token = ''  # reset token
-
-            elif line[index] in self.__lexicInserter.separators:
-                if token:
-                    # print(token) println
-                    tokens.append(token)
-                token = line[index]
-                index += 1
-                # print(token) ( ) ;
-                tokens.append(token)
-                token = ''  # reset token
-
-            else:
-                token += line[index]
-                index += 1
-        if token:
-            tokens.append(token)
-        return tokens
+    def get_tokens(self, file):
+        pif = []
+        st = []
+        line_number = 0
+        lexically_correct = True
+        for line in file:
+            line = line.strip()
+            separators = []
+            i = 0
+            while i < len(line):
+                for separator in self.get_separators():
+                    if separator == line[i]:
+                        if separator == '"':
+                            idx2 = line.find('"', i+1, len(line))
+                            if idx2 != -1:
+                                separators.append(line[i])
+                                i = idx2+1
+                        else:
+                            separators.append(line[i])
+                i += 1
+            tokens = []
+            for separator in separators:
+                if separator == '"':
+                    next_separator_index = line.find(separator)
+                    if next_separator_index != -1:
+                        line = line[next_separator_index + 1:len(line)]
+                        next_separator_index1 = line.find(separator)
+                        tokens.append('"' + line[next_separator_index:next_separator_index1] + '"')
+                        line = line[next_separator_index1+1:len(line)]
+                else:
+                    next_separator_index = line.find(separator)
+                    word = line[0:next_separator_index]
+                    line = line[next_separator_index+1:len(line)]
+                    if word != '':
+                        tokens.append(word)
+                    if separator != ' ':
+                        tokens.append(separator)
+            for w in tokens:
+                if w in self.get_separators() + self.get_operators() + self.get_reserved_words():
+                    pif.append((w, -1))
+                elif self.is_identifier(w) or self.is_numerical_constant(w) or self.is_string_constant(w):
+                    if w not in st:
+                        pif.append((w, None))
+                        st.append(w)
+                    elif w in st:
+                        pif.append((w, None))
+                else:
+                    print("Lexical error at line: " + str(line_number) + ", with the unknown token " + str(w))
+                    lexically_correct = False
+            line_number += 1
+        if lexically_correct:
+            print("Lexically correct")
+        return pif, st

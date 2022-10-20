@@ -14,7 +14,7 @@ class LexicInserter:
                 if separator == "space":
                     separator = " "
                 self.separators.append(separator)
-            for i in range(13):
+            for i in range(15):
                 self.operators.append(f.readline().strip())
             # for i in range(72):
             #     self.reservedWords.append(f.readline().strip())

@@ -15,15 +15,16 @@ space
 -
 *
 /
+mod
 ==
 <=
 >=
 <
 >
-=
 A
 O
 N
+=
 integer
 string
 if
