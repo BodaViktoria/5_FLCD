@@ -10,8 +10,16 @@ I chose to implement the symbol table with the data structure hash table. The ha
 ASCII codes of the characters of the constant/identifier, modulo the size of the list.
 
 Operations:
-- insert(key): returns the index of the element, whether it was already stored or not
-- remove(key): -
-- return_index(key): returns the two indices which show the exact location of the specific key in the ST
-- hash(key): returns the index of the ST list in which the element will be placed
-- __str__ (overridden operation): returns the string representation of the ST
+- insert(key:string): -
+    Checks if the element was already stored in the ST or not. If it  was, then the element won't be stored again and
+    it raises an Exception saying that the element already exists in the ST. Otherwise, the element is stored.
+- remove(key): None
+    Checks if the key is present in the ST. If yes, then it removes the key from the data structure. Otherwise, it raises
+    an error.
+- key_exists(key:string): boolean
+    Checks if the given key exists in the ST. If it exists, then it returns True, otherwise it returns False.
+- hash(key): int
+    Computes the sum of the ASCII codes of the characters and divides them by the hash table size, then it returns
+    it. The returned number is the index of the ST list in which the element will be placed.
+- __str__ (overridden operation): string
+    Returns the string representation of the ST.

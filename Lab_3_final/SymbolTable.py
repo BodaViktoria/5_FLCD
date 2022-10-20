@@ -9,29 +9,31 @@ class SymbolTable:
         :param key: the key we want to insert
         :return: position of the key in the ST
         """
-        # if the key already stored in the ST -> return the index
-        if key in self.__table[self.hash(key)]:
-            return self.return_index(key)
-        # if not already stored -> store it and return the index
+        # if the key already stored in the ST -> raise an error
+        if self.key_exists(key):
+            raise Exception("The key already exists")
+        # if not already stored -> store it
         self.__table[self.hash(key)].append(key)
-        return self.return_index(key)
+
+    def key_exists(self, key):
+        """
+        Checks if the given key exists in the ST
+        :param key: The key for which the existence is checked
+        :return: True, if it is present in the ST. False, otherwise.
+        """
+        return key in self.__table[self.hash(key)]
 
     def remove(self, key):
         """
         Removes an element from the ST
         :param key: the elem we want to remove
         :return: -
+        :raise: exception, if the element is not present in the ST
         """
-        index = self.hash(key)
-        self.__table[index].remove(key)
-
-    def return_index(self, key):
-        """
-        Return the index of the given key in the ST and in the list of symbols
-        :param key: the key we search the index for
-        :return: the index of the given key in the ST and in the list of symbols
-        """
-        return self.hash(key), self.__table[self.hash(key)].index(key)
+        if self.key_exists(key):
+            self.__table[self.hash(key)].remove(key)
+        else:
+            raise Exception("Key not found in the symbol table")
 
     def hash(self, key):
         """
