@@ -7,8 +7,7 @@ class SymbolTable:
         """
         Inserts an element in the ST
         :param key: the key we want to insert
-        :return: -
-        :raise: Exception, if the key was already stored
+        :return: position of the key in the ST
         """
         # if the key already stored in the ST -> raise an error
         if self.key_exists(key):
