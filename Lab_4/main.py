@@ -1,5 +1,3 @@
-from re import match
-
 from LexicInserter import LexicInserter
 from ProgramInternalForm import ProgramInternalForm
 from Scanner import Scanner
@@ -13,4 +11,4 @@ if __name__ == '__main__':
     tokenIdentifier = TokenIdentifier(lexicInserter)
 
     scanner = Scanner(symtable, programInternalForm, tokenIdentifier)
-    scanner.compute_results("p1.txt")
+    scanner.compute_results("p1err.txt")

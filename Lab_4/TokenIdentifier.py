@@ -20,11 +20,11 @@ class TokenIdentifier:
 
     @staticmethod
     def is_numerical_constant(token) -> bool:
-        return match(r'^(0|[+-]?[1-9][0-9]*)$|^\'.\'$|^\'.*\'$', token) is not None
+        return match(r'^(0|[+-]?[1-9][0-9]*)$|^\'.\'$|^\'.[0-9]*\'$', token) is not None
 
     @staticmethod
     def is_string_constant(token) -> bool:
-        return match(r'"(.*?)"', token) is not None
+        return match(r'"(.*)"', token) is not None
 
     def get_tokens(self, file):
         pif = []
@@ -35,14 +35,16 @@ class TokenIdentifier:
             line = line.strip()
             separators = []
             i = 0
+            number_of_separators = 0
             while i < len(line):
                 for separator in self.get_separators():
                     if separator == line[i]:
                         if separator == '"':
-                            idx2 = line.find('"', i+1, len(line))
-                            if idx2 != -1:
+                            number_of_separators += 1
+                            idx2 = line.find('"', i + 1, len(line))
+                            if idx2 != -1 and number_of_separators % 2 != 0:
                                 separators.append(line[i])
-                                i = idx2+1
+                                i = idx2 + 1
                         else:
                             separators.append(line[i])
                 i += 1
@@ -51,14 +53,14 @@ class TokenIdentifier:
                 if separator == '"':
                     next_separator_index = line.find(separator)
                     if next_separator_index != -1:
-                        line = line[next_separator_index + 1:len(line)]
+                        line = line[next_separator_index + 1: len(line)]
                         next_separator_index1 = line.find(separator)
                         tokens.append('"' + line[next_separator_index:next_separator_index1] + '"')
-                        line = line[next_separator_index1+1:len(line)]
+                        line = line[next_separator_index1 + 1: len(line)]
                 else:
                     next_separator_index = line.find(separator)
                     word = line[0:next_separator_index]
-                    line = line[next_separator_index+1:len(line)]
+                    line = line[next_separator_index + 1:len(line)]
                     if word != '':
                         tokens.append(word)
                     if separator != ' ':

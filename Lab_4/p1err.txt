@@ -7,6 +7,6 @@ minimum_number = a;
 if (b < a) {
 minimum_number = b;
 }
-if (c < minimum_ number) {minimum_number = c;
+if (c < minimum_number) {minimum_number = c;
 }
 print("The minimum number is: " + minimum_number);

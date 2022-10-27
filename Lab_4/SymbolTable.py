@@ -43,6 +43,9 @@ class SymbolTable:
         """
         return sum(ord(ch) for ch in key) % self.__size
 
+    def return_index(self, key):
+        return self.hash(key), self.__table[self.hash(key)].index(key)
+
     def __str__(self) -> str:
         representation = ""
         for i in range(self.__size):

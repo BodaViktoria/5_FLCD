@@ -14,7 +14,7 @@ class Scanner:
             if token[1] == -1:
                 self.PIF.add(token[0], token[1])
             else:
-                self.PIF.add(token[0], self.ST.hash(token[0]))
+                self.PIF.add(token[0], self.ST.return_index(token[0]))
         with open('st.out', 'w') as writer:
             writer.write(str(self.ST))
         with open('pif.out', 'w') as writer:

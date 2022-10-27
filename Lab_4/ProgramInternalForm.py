@@ -7,6 +7,6 @@ class ProgramInternalForm:
 
     def __str__(self):
         result = ""
-        for tuple in self.__table:
-            result += tuple[0] + "->" + str(tuple[1]) + "\n"
+        for key_position_tuple in self.__table:
+            result += key_position_tuple[0] + "->" + str(key_position_tuple[1]) + "\n"
         return result
