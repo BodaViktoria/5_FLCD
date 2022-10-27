@@ -35,14 +35,14 @@ class TokenIdentifier:
             line = line.strip()
             separators = []
             i = 0
-            number_of_separators = 0
+            number_of_quotes = 0
             while i < len(line):
                 for separator in self.get_separators():
                     if separator == line[i]:
                         if separator == '"':
-                            number_of_separators += 1
+                            number_of_quotes += 1
                             idx2 = line.find('"', i + 1, len(line))
-                            if idx2 != -1 and number_of_separators % 2 != 0:
+                            if idx2 != -1 and number_of_quotes % 2 != 0:
                                 separators.append(line[i])
                                 i = idx2 + 1
                         else:
