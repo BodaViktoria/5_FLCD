@@ -3,9 +3,14 @@ class ParserOutput:
         self.__output_file = output_file
         self.__input_file = input_file
         self.__parser = parser
-        self.tree = []
 
-    def run(self):
+    '''
+        Reads from the input file the sequence which has to be parsed and parses the sequence. 
+        If the sequence is syntactically correct, then it constructs the parse tree and writes the parsing details and 
+        the parse tree to the output file. If the sequence has lexical errors, writes the parsing details up to the 
+        error to the output file, together with an error message, suggesting at which symbol did the problem occur.
+    '''
+    def writeToFile(self):
         random_list = []
         with open(self.__input_file, 'r') as file:
             for line in file:
@@ -17,7 +22,7 @@ class ParserOutput:
 
             f = open(self.__output_file, "w")
 
-            parserOutputString = self.__parser.parserOutputString
+            parserOutputString = self.__parser.returnParserOutputString
 
             for line in parserOutputString:
                 f.write(str(line) + '\n')
@@ -35,7 +40,7 @@ class ParserOutput:
 
             f = open(self.__output_file, "w")
 
-            parserOutputString = self.__parser.parserOutputString
+            parserOutputString = self.__parser.returnParserOutputString
 
             for line in parserOutputString:
                 f.write(str(line) + '\n')

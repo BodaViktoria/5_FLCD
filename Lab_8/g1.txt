@@ -1,8 +1,6 @@
-S A B C D
-a + * ( ) epsilon
+S A B
+a b c d
 S
-S ::= B A
-A ::= "+" B A | "epsilon"
-B ::= D C
-C ::= "*" D C | "epsilon"
-D ::= "(" S ")" | "a"
+S ::= A B
+A ::= "c" | "a" A
+B ::= "d" | "b" B

@@ -4,10 +4,9 @@ class Node:
         self.sibling = -1
         self.value = value
         self.index = 0
-        self.level = 0
 
     def __str__(self):
-        return str(self.index) + "  " + str(self.value) + " " + str(self.father) + " " + str(self.sibling)
+        return str(self.index) + " " + str(self.value) + " " + str(self.father) + " " + str(self.sibling)
 
 
 class NodeHelper:
