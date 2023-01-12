@@ -1,0 +1,14 @@
+{
+integer sum;
+sum=0;
+integer n;
+integer i;
+i=0;
+input_integer(n);
+while(i < n){
+integer number;
+input_integer(number);
+sum=sum+number;
+};
+print(sum);
+}

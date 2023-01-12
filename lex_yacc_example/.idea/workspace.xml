@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="451ae37f-409c-4025-8851-b2b877fba704" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../Lab_2/.idea/Lab_2.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../parserAG/.idea/parserAG.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab_2/token.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab_4/ProgramInternalForm.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_4/ProgramInternalForm.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab_4/documentation.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_4/documentation.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab_4/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_4/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab_4/p1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_4/p1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab_4/pif.out" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_4/pif.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab_4/st.out" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_4/st.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab_4/~$cumentation.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab_8/Parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_8/Parser.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab_8/~$cumentation.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_8/~$cumentation.docx" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2JXZ7DRYGJLAajWxphc7UFf0Eo2" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/viktoriaboda/Documents/University/3_1/FLCD/lex_yacc_example&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="lex_yacc_example" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="451ae37f-409c-4025-8851-b2b877fba704" name="Changes" comment="" />
+      <created>1672226218378</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1672226218378</updated>
+      <workItem from="1672226219559" duration="6071000" />
+      <workItem from="1672303304337" duration="12214000" />
+      <workItem from="1673021996276" duration="7537000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/lex_yacc_example$main.coverage" NAME="main Coverage Results" MODIFIED="1672274300501" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+</project>

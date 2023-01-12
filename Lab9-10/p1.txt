@@ -1,0 +1,17 @@
+{
+integer a;
+integer b;
+integer c;
+input_integer(a);
+input_integer(b);
+input_integer(c);
+integer minimum_number;
+minimum_number=a;
+if(b < a){
+minimum_number=b;};
+if(c < minimum_number){
+minimum_number=c;
+};
+print("Minimum");
+print(minimum_number);
+}
