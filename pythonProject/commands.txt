@@ -1,0 +1,10 @@
+lex scanner.lxi
+
+yacc -d parser.y
+
+cc lex.yy.c y.tab.c -o rezultat
+
+./rezultat<p1.txt
+./rezultat<p2.txt
+./rezultat<p3.txt
+./rezultat<p1err.txt

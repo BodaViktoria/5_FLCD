@@ -1,0 +1,20 @@
+{
+integer a;
+input_integer(a);
+integer i;
+i=2;
+boolean prime;
+prime=true;
+while(i < a/2){
+if(amodi == 0){
+prime=false;
+};
+i=i+1;
+};
+if(prime == true){
+print("The number is prime");
+}
+else{
+print("The number is not prime");
+};
+}
